@@ -83,8 +83,8 @@ def predict():
         f = request.files['anonymised_file']
         # We need to get the name of the uploaded file - the output file name depends on this.
         # This line is not work. Need to figure out why
-        target_repo_raw_data_filename = f.filename
-        print(f.filename)
+        target_repo_raw_data_filename = str(f.filename)
+        print(target_repo_raw_data_filename)
     else:
         return "No file"
     # The files can be large ~ MBs. We might add code in client to compress before uploading.
